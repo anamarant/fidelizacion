@@ -1,0 +1,6 @@
+dc22bf,127.0.0.1,GET,http://localhost:8000/,1449759825,,200
+da18c4,127.0.0.1,GET,http://localhost:8000/,1449760035,,200
+15cb0a,127.0.0.1,GET,http://localhost:8000/app_dev.php/,1449760088,,200
+2b9b06,127.0.0.1,GET,http://localhost:8000/app_dev.php/,1449760525,,200
+362446,127.0.0.1,GET,http://localhost:8000/app_dev.php/Productos,1449760537,185c39,200
+185c39,127.0.0.1,GET,http://localhost:8000/app_dev.php/Productos,1449760537,,404
