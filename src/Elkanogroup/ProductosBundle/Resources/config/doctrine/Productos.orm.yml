@@ -1,0 +1,17 @@
+Elkanogroup\ProductosBundle\Entity\Productos:
+   type: entity
+   table: productos
+   id:
+      id_producto:
+         type: integer
+         generator: { strategy: AUTO }
+   fields:
+      nombre:
+         type: string
+         length: 255
+      imagen:
+         type: string
+         length: 255
+      puntos:
+         type: integer
+         length: 11

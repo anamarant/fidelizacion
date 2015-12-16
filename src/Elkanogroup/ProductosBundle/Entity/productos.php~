@@ -1,0 +1,14 @@
+<?php
+
+class Productos {
+    
+    private $id_producto;
+    
+    protected $nombre;
+    
+    protected $imagen;
+    
+    protected $puntos;
+    
+    
+}

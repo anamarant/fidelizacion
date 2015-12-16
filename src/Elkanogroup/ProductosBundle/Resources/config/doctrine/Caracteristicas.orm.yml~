@@ -1,0 +1,21 @@
+Elkanogroup\ProductosBundle\Entity\Caracteristicas:
+   type: entity
+   table: caracteristicas
+   id:
+      id_caracteristica:
+         type: integer
+         generator: { strategy: AUTO }
+   fields:
+      nombre:
+         type: string
+         length: 255
+      puntos_extra:
+         type: integer
+         length: 11
+   manyToOne:
+      id_producto:
+         targetEntity: Productos
+         joinColumn:
+            name: id_producto
+            referencedColumnName: id_producto
+         

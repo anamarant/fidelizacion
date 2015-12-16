@@ -27,6 +27,32 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         $context = $this->context;
         $request = $this->request;
 
+        if (0 === strpos($pathinfo, '/js/e3a81af')) {
+            // _assetic_e3a81af
+            if ($pathinfo === '/js/e3a81af.js') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'e3a81af',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_e3a81af',);
+            }
+
+            // _assetic_e3a81af_0
+            if ($pathinfo === '/js/e3a81af_part_1_bootstrap.min_1.js') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'e3a81af',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_e3a81af_0',);
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/css')) {
+            // _assetic_2c8c367
+            if ($pathinfo === '/css/2c8c367.css') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => '2c8c367',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_2c8c367',);
+            }
+
+            // _assetic_34286f7
+            if ($pathinfo === '/css/34286f7.css') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => '34286f7',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_34286f7',);
+            }
+
+        }
+
         if (0 === strpos($pathinfo, '/_')) {
             // _wdt
             if (0 === strpos($pathinfo, '/_wdt') && preg_match('#^/_wdt/(?P<token>[^/]++)$#s', $pathinfo, $matches)) {
@@ -127,9 +153,26 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // productos_homepage
-        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'productos_homepage')), array (  '_controller' => 'Elkanogroup\\ProductosBundle\\Controller\\DefaultController::indexAction',));
+        if (0 === strpos($pathinfo, '/productos')) {
+            // productos_list
+            if (rtrim($pathinfo, '/') === '/productos') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'productos_list');
+                }
+
+                return array (  '_controller' => 'Elkanogroup\\ProductosBundle\\Controller\\DefaultController::listAction',  '_route' => 'productos_list',);
+            }
+
+            // productos_show
+            if (0 === strpos($pathinfo, '/productos/ver') && preg_match('#^/productos/ver/(?P<id_producto>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'productos_show')), array (  '_controller' => 'Elkanogroup\\ProductosBundle\\Controller\\DefaultController::showAction',));
+            }
+
+            // productos_create
+            if ($pathinfo === '/productos/create') {
+                return array (  '_controller' => 'Elkanogroup\\ProductosBundle\\Controller\\DefaultController::createAction',  '_route' => 'productos_create',);
+            }
+
         }
 
         // homepage

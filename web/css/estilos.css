@@ -1,0 +1,21 @@
+/**
+*
+*/
+header,footer {
+    
+    background-color: #13469b;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    color: #fff;
+}
+
+body {
+    background: url('../images/wel_to_bg.png');
+}
+
+footer {
+    text-align: center;
+}
+
+
+

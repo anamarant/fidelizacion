@@ -1,3 +1,12 @@
-productos_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: ProductosBundle:Default:index }
+productos_list:
+   path: /productos/
+   defaults: {_controller: ProductosBundle:Default:list }
+
+productos_show:
+   path: /productos/ver/{id_producto}
+   defaults: {_controller: ProductosBundle:Default:show }
+   
+productos_create:
+   path: /productos/create
+   defaults: {_controller: ProductosBundle:Default:create }
+
